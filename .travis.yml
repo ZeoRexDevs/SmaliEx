@@ -1,0 +1,32 @@
+env:
+   - TERM=dumb GROOVY_TURN_OFF_JAVA_WARNINGS=true
+language: java
+dist: trusty
+matrix:
+  include:
+    - os: linux
+      jdk: openjdk8
+    - os: linux
+      jdk: oraclejdk8
+    - os: osx
+      osx_image: xcode9.2
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+install: ./gradlew clean
+script: ./gradlew -b build.gradle dist
+branches:
+  only:
+    - master
+deploy:
+  provider: releases
+  api_key:
+    secure: "Sz6qeMsFoi1LRrmLi1+GjxhgX8Iy5rY/3YOUAfg5ThTlbze9RO4yMHHfaPYyYX2JLEHRrM8nRp/tlH+iCY2DqGgmZ6HBXyuhR1a9Y0yDkkl/LtyCQkYnrno/9FV95IGyQKnWfq4XCX3ZH1WQvQir01HxxGYTHirYYMNZUOT/dymFZKRs1jXHu5MPkc5QD1WxPqqnbaR2ztEDz1VnUcl2BnT+ziOqDHRYNN7g1uuhmaC15lqRr7GQYcVb+CDQuRhUy+U/LbPCABebFRxwFm+lRI6PIdSl6HLuya4qnjePDmX9MH9siKQP6Qi6Hky/blKj7JBV6UmodHeWDCBhwg/HpAJwdWLLvc4Til51mu1BBKx9rEHBSflhUVpIQzTkZNR2SyFY7AiDBsMVU+/70y4bhyK4/psBSSEU67QshBXBw05A5xppudWN2Wt2VYRs2aL9XFGYcNcbXxobjRyLqjuRx5Rqw19li1xZYVd5ggL3Vcch/O6Ofms+TWr7HPrTD1kvI760KIzRRzBvoFVUqVm6NKEg9lZ5ss4wfbUTHu4SixEm2izqJs+fKoF2Wv8yKWKIZUokMvxfnjqUuYZDDu0S6uofRJwRN4yYm8L6p6w7D831Jp7qFbAOE0eHfy/k3RrE3o+jOvHlabXAdJalsiDlBcwaprKK2R+qiegXPepJIU0="
+  file_glob: true
+  file: "./smaliex-bin/*.jar"
+  skip_cleanup: true
+  on:
+    tags: false
+    repo: PhantomZone54/SmaliEx
+    branch: master
