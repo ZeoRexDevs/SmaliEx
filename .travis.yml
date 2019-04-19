@@ -21,8 +21,7 @@ branches:
     - master
 deploy:
   provider: releases
-  api_key:
-    secure: "ikOB9eK3dE5zgZcTSQoXhDtQRtxw2eJy+8h266I9IT/x3QWlsz1QVspNpXppcb/Yp4yPmtRJzZo61pVmIUIxNpb0qtAxKphR6Picv610qcmzUsBuG7A/CMioWUkNdBjPgEOE/nFfgk501vVlMkbMOhZvCWE9B5poM5uLJpY8U1VF7vfG0CJqQxB4SuiX5aueiPJ2Cnv9n0eYSlE6VczQsntV2xOQaZ6s/UKacabbmq+3DM/czgerlLbVpW2F/YgOh0CdZ+05uIGA7noOmKs3sTRzhCTNNB1k7ImwInWgKIzQLKYlChxsCwT9wsx5ZiT/C1vue73eY0ikxaAOVvuT2n5YZP9d0Ip12HsSYvxrallI7nfax/V7bD7gy1aLweCDBh0kWBN2bhoepIjNfT4hqTCuJYwKlKtT2TzgcgLmP0j8DoXfi82hm7YbfMWPM87VRomZLErATd5wd+fJbEYdVZk6xpnmngEdgesTtPbZWjavbGf4e2eq8hjHdQtZMiy0c/u1278+uSoFlrknipO2OQFELZ3V74M4CUeB0wlbvOy7wTgotlqJDjhNOBSKEoCGCjvghDA7ANrmWCk3ITR0nG/qaDIZLDCWJK26olbzrtyKYmo1c+AvGGln0knDGILDEwJG/JlfETH7vPiBJE+V9xOoXbahl7VR4jLui9o6Fac="
+  api_key: "$GitOAUTHToken"
   file_glob: true
   file: "./smaliex-bin/*.jar"
   skip_cleanup: true
